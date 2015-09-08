@@ -56,6 +56,11 @@ public class PFragment extends Fragment implements PConstants {
     applet.onStop();
     super.onStop();
   }
+  
+  
+  public void onBackPressed() {
+	  applet.onBackPressed();
+  }
 
 
   public void setOrientation(int which) {

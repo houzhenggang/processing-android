@@ -4,15 +4,22 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import android.app.Fragment;
 import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 public class PFragment extends Fragment implements PConstants {
 	
   private PApplet applet;
-
-
-  public void setPApplet(PApplet applet) {
-    this.applet = applet;
+  
+  @Override
+  public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    //TODO: remove this hardcode
+    applet = new PApplet(1080, 1920);
     applet.setWrapper(this);
+
+    return applet.getSketchView();
   }
 
 
